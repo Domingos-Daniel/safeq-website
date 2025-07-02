@@ -1,16 +1,5 @@
 import { ImageResponse } from "next/og";
 
-// Rota para /favicon.ico
-export function GET() {
-  return new Response(null, {
-    status: 302,
-    headers: {
-      Location: "/favicon.ico",
-      "Cache-Control": "public, max-age=31536000, immutable",
-    },
-  });
-}
-
 // Imagens com tamanhos específicos para diferentes dispositivos
 export function generateImageMetadata() {
   return [
