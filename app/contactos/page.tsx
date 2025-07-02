@@ -3,6 +3,7 @@
 import type React from "react"
 
 import { useState } from "react"
+import emailjs from '@emailjs/browser'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -10,7 +11,8 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
-import { Mail, Phone, MapPin, Clock, Send, MessageSquare, Building } from "lucide-react"
+import { Modal } from "@/components/ui/modal"
+import { Mail, Phone, MapPin, Clock, Send, MessageSquare, Building, CheckCircle, AlertCircle, Loader2 } from "lucide-react"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 
@@ -23,12 +25,71 @@ export default function ContactosPage() {
     servico: "",
     mensagem: "",
   })
+  const [isLoading, setIsLoading] = useState(false)
+  const [modal, setModal] = useState({
+    isOpen: false,
+    type: "success" as "success" | "error",
+    title: "",
+    message: ""
+  })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission here
-    console.log("Form submitted:", formData)
-    alert("Mensagem enviada com sucesso! Entraremos em contacto em breve.")
+    setIsLoading(true)
+
+    try {
+      // Configurações do EmailJS
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+
+      // Preparar os dados para o template
+      const templateParams = {
+        to_email: 'geral@safeq.ao',
+        from_name: formData.nome,
+        from_email: formData.email,
+        empresa: formData.empresa || 'Não informado',
+        telefone: formData.telefone || 'Não informado',
+        servico: formData.servico || 'Não selecionado',
+        message: formData.mensagem,
+        subject: `Contacto do Website - ${formData.nome}`
+      }
+
+      // Enviar email
+      const result = await emailjs.send(serviceId, templateId, templateParams, publicKey)
+      
+      if (result.status === 200) {
+        // Mostrar modal de sucesso
+        setModal({
+          isOpen: true,
+          type: "success",
+          title: "Mensagem Enviada!",
+          message: "Obrigado pelo seu contacto! A sua mensagem foi enviada com sucesso e nossa equipe entrará em contacto em até 24 horas."
+        })
+        
+        // Limpar formulário
+        setFormData({
+          nome: "",
+          email: "",
+          empresa: "",
+          telefone: "",
+          servico: "",
+          mensagem: "",
+        })
+      }
+    } catch (error) {
+      console.error('Erro ao enviar email:', error)
+      
+      // Mostrar modal de erro
+      setModal({
+        isOpen: true,
+        type: "error",
+        title: "Erro ao Enviar",
+        message: "Ocorreu um erro ao enviar a sua mensagem. Por favor, tente novamente ou entre em contacto diretamente através dos nossos dados de contacto."
+      })
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   const handleInputChange = (field: string, value: string) => {
@@ -143,9 +204,23 @@ export default function ContactosPage() {
                       />
                     </div>
 
-                    <Button type="submit" size="lg" className="w-full bg-blue-900 hover:bg-blue-800">
-                      <Send className="h-4 w-4 mr-2" />
-                      Enviar Mensagem
+                    <Button 
+                      type="submit" 
+                      size="lg" 
+                      className="w-full bg-blue-900 hover:bg-blue-800"
+                      disabled={isLoading}
+                    >
+                      {isLoading ? (
+                        <>
+                          <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                          A enviar...
+                        </>
+                      ) : (
+                        <>
+                          <Send className="h-4 w-4 mr-2" />
+                          Enviar Mensagem
+                        </>
+                      )}
                     </Button>
                   </form>
                 </CardContent>
@@ -225,6 +300,7 @@ export default function ContactosPage() {
                   <Button
                     variant="outline"
                     className="w-full border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white bg-transparent"
+                    onClick={() => window.location.href = 'mailto:geral@safeq.ao'}
                   >
                     <Mail className="h-4 w-4 mr-2" />
                     Enviar Email
@@ -315,6 +391,51 @@ export default function ContactosPage() {
           </div>
         </div>
       </section>
+
+      {/* Modal de Feedback */}
+      <Modal
+        isOpen={modal.isOpen}
+        onClose={() => setModal(prev => ({ ...prev, isOpen: false }))}
+        title={modal.title}
+        type={modal.type}
+      >
+        <div className="space-y-4">
+          <p className="text-gray-600 leading-relaxed">
+            {modal.message}
+          </p>
+          
+          {modal.type === "success" && (
+            <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+              <div className="flex items-center space-x-2">
+                <CheckCircle className="h-5 w-5 text-green-600" />
+                <span className="text-sm font-medium text-green-800">
+                  Próximos passos:
+                </span>
+              </div>
+              <ul className="mt-2 text-sm text-green-700 space-y-1 ml-7">
+                <li>• Verificará o seu email em até 24 horas</li>
+                <li>• Nossa equipe analisará as suas necessidades</li>
+                <li>• Entraremos em contacto para agendar uma reunião</li>
+              </ul>
+            </div>
+          )}
+          
+          {modal.type === "error" && (
+            <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+              <div className="flex items-center space-x-2">
+                <AlertCircle className="h-5 w-5 text-red-600" />
+                <span className="text-sm font-medium text-red-800">
+                  Contactos alternativos:
+                </span>
+              </div>
+              <div className="mt-2 text-sm text-red-700 space-y-1 ml-7">
+                <p>• Email: geral@safeq.ao</p>
+                <p>• Telefone: +244 923304222</p>
+              </div>
+            </div>
+          )}
+        </div>
+      </Modal>
 
      
 
