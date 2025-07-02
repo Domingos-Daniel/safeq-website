@@ -4,6 +4,7 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import ScrollToTop from "@/components/scroll-to-top"
+import BackToTop from "@/components/back-to-top"
 import Loading from "@/components/loading"
 import { Suspense } from "react"
 
@@ -86,6 +87,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <ScrollToTop />
           <Suspense fallback={<Loading />}>{children}</Suspense>
+          <BackToTop />
         </ThemeProvider>
       </body>
     </html>

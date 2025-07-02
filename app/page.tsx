@@ -63,7 +63,7 @@ export default function HomePage() {
       icon: Users,
       title: "Treinamento Avançado",
       description: "Capacitação completa com certificação internacional",
-      features: ["Presencial & Online", "Certificação SAP", "Suporte contínuo", "Material exclusivo"],
+      features: ["Presencial & Online", "Certificação Profissional", "Suporte contínuo", "Material exclusivo"],
       color: "from-purple-500 to-purple-700",
       badge: "Certificado",
     },
@@ -126,59 +126,59 @@ export default function HomePage() {
       <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          {/* Large geometric shapes */}
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute top-1/2 -left-20 w-64 h-64 bg-gradient-to-br from-green-400/20 to-blue-400/20 rounded-full blur-2xl animate-pulse delay-1000"></div>
-          <div className="absolute bottom-20 right-1/4 w-48 h-48 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-2xl animate-pulse delay-2000"></div>
+          {/* Large geometric shapes - optimized for mobile */}
+          <div className="absolute -top-16 sm:-top-24 md:-top-40 -right-16 sm:-right-24 md:-right-40 w-32 sm:w-48 md:w-80 h-32 sm:h-48 md:h-80 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute top-1/2 -left-8 sm:-left-12 md:-left-20 w-24 sm:w-40 md:w-64 h-24 sm:h-40 md:h-64 bg-gradient-to-br from-green-400/20 to-blue-400/20 rounded-full blur-2xl animate-pulse delay-1000"></div>
+          <div className="absolute bottom-8 sm:bottom-12 md:bottom-20 right-1/4 w-20 sm:w-32 md:w-48 h-20 sm:h-32 md:h-48 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-2xl animate-pulse delay-2000"></div>
 
-          {/* Grid pattern */}
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+          {/* Grid pattern - responsive */}
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.03)_1px,transparent_1px)] bg-[size:1.5rem_1.5rem] sm:bg-[size:2rem_2rem] md:bg-[size:4rem_4rem]"></div>
 
-          {/* Floating elements */}
-          <div className="absolute top-1/4 left-1/4 w-4 h-4 bg-blue-500 rounded-full animate-bounce delay-300"></div>
-          <div className="absolute top-3/4 left-3/4 w-3 h-3 bg-purple-500 rounded-full animate-bounce delay-700"></div>
-          <div className="absolute top-1/2 right-1/3 w-2 h-2 bg-green-500 rounded-full animate-bounce delay-1100"></div>
+          {/* Floating elements - progressive enhancement */}
+          <div className="hidden sm:block absolute top-1/4 left-1/4 w-3 h-3 md:w-4 md:h-4 bg-blue-500 rounded-full animate-bounce delay-300"></div>
+          <div className="hidden sm:block absolute top-3/4 left-3/4 w-2 h-2 md:w-3 md:h-3 bg-purple-500 rounded-full animate-bounce delay-700"></div>
+          <div className="hidden md:block absolute top-1/2 right-1/3 w-2 h-2 bg-green-500 rounded-full animate-bounce delay-1100"></div>
         </div>
 
-        <div className="relative container mx-auto px-4 py-20">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="relative container mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-20">
+          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-16 items-center">
             {/* Left Content */}
-            <div className="space-y-8">
+            <div className="space-y-4 sm:space-y-6 md:space-y-8 text-center lg:text-left order-1 lg:order-1">
               {/* Trust Badges */}
-              <div className="flex flex-wrap gap-3">
-                <Badge className="bg-gradient-to-r from-blue-100 to-blue-200 text-blue-800 px-4 py-2 text-sm font-medium">
-                  <Globe className="w-4 h-4 mr-2" />
+              <div className="flex flex-wrap justify-center lg:justify-start gap-1.5 sm:gap-2 md:gap-3">
+                <Badge className="bg-gradient-to-r from-blue-100 to-blue-200 text-blue-800 px-2 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 text-xs sm:text-sm font-medium">
+                  <Globe className="w-3 sm:w-3.5 md:w-4 h-3 sm:h-3.5 md:h-4 mr-1 sm:mr-1.5 md:mr-2" />
                   Líder em Angola
                 </Badge>
-                <Badge className="bg-gradient-to-r from-green-100 to-green-200 text-green-800 px-4 py-2 text-sm font-medium">
-                  <Rocket className="w-4 h-4 mr-2" />
+                <Badge className="bg-gradient-to-r from-green-100 to-green-200 text-green-800 px-2 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 text-xs sm:text-sm font-medium">
+                  <Rocket className="w-3 sm:w-3.5 md:w-4 h-3 sm:h-3.5 md:h-4 mr-1 sm:mr-1.5 md:mr-2" />
                   Inovação
                 </Badge>
-                <Badge className="bg-gradient-to-r from-purple-100 to-purple-200 text-purple-800 px-4 py-2 text-sm font-medium">
-                  <Users className="w-4 h-4 mr-2" />
+                <Badge className="bg-gradient-to-r from-purple-100 to-purple-200 text-purple-800 px-2 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 text-xs sm:text-sm font-medium">
+                  <Users className="w-3 sm:w-3.5 md:w-4 h-3 sm:h-3.5 md:h-4 mr-1 sm:mr-1.5 md:mr-2" />
                   Treinamento
                 </Badge>
-                <Badge className="bg-gradient-to-r from-orange-100 to-orange-200 text-orange-800 px-4 py-2 text-sm font-medium">
-                  <Settings className="w-4 h-4 mr-2" />
+                <Badge className="bg-gradient-to-r from-orange-100 to-orange-200 text-orange-800 px-2 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 text-xs sm:text-sm font-medium">
+                  <Settings className="w-3 sm:w-3.5 md:w-4 h-3 sm:h-3.5 md:h-4 mr-1 sm:mr-1.5 md:mr-2" />
                   Implementação
                 </Badge>
               </div>
 
               {/* Main Headline */}
-              <div className="space-y-6">
-                <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
+              <div className="space-y-3 sm:space-y-4 md:space-y-6">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
                   <span className="text-gray-900">Transforme</span>
                   <br />
                   <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent">
                     seu Negócio
                   </span>
                   <br />
-                  <span className="text-gray-700 text-4xl lg:text-5xl">com SAP</span>
+                  <span className="text-gray-700 text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">com SAP</span>
                 </h1>
 
-                <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
+                <div className="w-12 sm:w-16 md:w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mx-auto lg:mx-0"></div>
 
-                <p className="text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-2xl">
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                   Somos a <strong className="text-gray-900">empresa líder em Angola</strong> especializada em
                   <strong className="text-blue-600"> soluções SAP</strong>. Oferecemos consultoria estratégica,
                   implementação de classe mundial e treinamento certificado que
@@ -187,183 +187,184 @@ export default function HomePage() {
               </div>
 
               {/* Key Value Props */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="flex items-center space-x-3 p-4 bg-white/60 backdrop-blur-sm rounded-2xl border border-blue-100">
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
-                    <Rocket className="w-6 h-6 text-white" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 md:gap-4">
+                <div className="flex items-center space-x-2 sm:space-x-3 p-2.5 sm:p-3 md:p-4 bg-white/60 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-blue-100">
+                  <div className="w-8 sm:w-10 md:w-12 h-8 sm:h-10 md:h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Rocket className="w-4 sm:w-5 md:w-6 h-4 sm:h-5 md:h-6 text-white" />
                   </div>
-                  <div>
-                    <div className="font-semibold text-gray-900">Implementação Rápida</div>
-                    <div className="text-sm text-gray-600">Go-live em tempo recorde</div>
-                  </div>
-                </div>
-
-                <div className="flex items-center space-x-3 p-4 bg-white/60 backdrop-blur-sm rounded-2xl border border-green-100">
-                  <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-xl flex items-center justify-center">
-                    <Target className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-gray-900">ROI Garantido</div>
-                    <div className="text-sm text-gray-600">300% de retorno médio</div>
+                  <div className="min-w-0">
+                    <div className="font-semibold text-gray-900 text-xs sm:text-sm md:text-base">Implementação Rápida</div>
+                    <div className="text-xs sm:text-sm text-gray-600">Go-live em tempo recorde</div>
                   </div>
                 </div>
 
-                <div className="flex items-center space-x-3 p-4 bg-white/60 backdrop-blur-sm rounded-2xl border border-purple-100">
-                  <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center">
-                    <Users className="w-6 h-6 text-white" />
+                <div className="flex items-center space-x-2 sm:space-x-3 p-2.5 sm:p-3 md:p-4 bg-white/60 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-green-100">
+                  <div className="w-8 sm:w-10 md:w-12 h-8 sm:h-10 md:h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Target className="w-4 sm:w-5 md:w-6 h-4 sm:h-5 md:h-6 text-white" />
                   </div>
-                  <div>
-                    <div className="font-semibold text-gray-900">Equipe Certificada</div>
-                    <div className="text-sm text-gray-600">10+ consultores SAP</div>
+                  <div className="min-w-0">
+                    <div className="font-semibold text-gray-900 text-xs sm:text-sm md:text-base">ROI Garantido</div>
+                    <div className="text-xs sm:text-sm text-gray-600">300% de retorno médio</div>
                   </div>
                 </div>
 
-                <div className="flex items-center space-x-3 p-4 bg-white/60 backdrop-blur-sm rounded-2xl border border-orange-100">
-                  <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl flex items-center justify-center">
-                    <HeadphonesIcon className="w-6 h-6 text-white" />
+                <div className="flex items-center space-x-2 sm:space-x-3 p-2.5 sm:p-3 md:p-4 bg-white/60 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-purple-100">
+                  <div className="w-8 sm:w-10 md:w-12 h-8 sm:h-10 md:h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Users className="w-4 sm:w-5 md:w-6 h-4 sm:h-5 md:h-6 text-white" />
                   </div>
-                  <div>
-                    <div className="font-semibold text-gray-900">Suporte 24/7</div>
-                    <div className="text-sm text-gray-600">Disponibilidade total</div>
+                  <div className="min-w-0">
+                    <div className="font-semibold text-gray-900 text-xs sm:text-sm md:text-base">Equipe Certificada</div>
+                    <div className="text-xs sm:text-sm text-gray-600">10+ consultores SAP</div>
+                  </div>
+                </div>
+
+                <div className="flex items-center space-x-2 sm:space-x-3 p-2.5 sm:p-3 md:p-4 bg-white/60 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-orange-100">
+                  <div className="w-8 sm:w-10 md:w-12 h-8 sm:h-10 md:h-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0">
+                    <HeadphonesIcon className="w-4 sm:w-5 md:w-6 h-4 sm:h-5 md:h-6 text-white" />
+                  </div>
+                  <div className="min-w-0">
+                    <div className="font-semibold text-gray-900 text-xs sm:text-sm md:text-base">Suporte 24/7</div>
+                    <div className="text-xs sm:text-sm text-gray-600">Disponibilidade total</div>
                   </div>
                 </div>
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-3 md:gap-4 pt-2 sm:pt-4 justify-center lg:justify-start">
                 <Link href="/contactos" scroll={true}>
                   <Button
                     size="lg"
-                    className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold shadow-2xl hover:shadow-blue-500/25 transition-all duration-300"
+                    className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 text-sm sm:text-base md:text-lg font-semibold shadow-2xl hover:shadow-blue-500/25 transition-all duration-300"
                   >
-                    <Calendar className="mr-3 h-5 w-5" />
-                    Agendar Consultoria Gratuita
-                    <ArrowRight className="ml-3 h-5 w-5" />
+                    <Calendar className="mr-1.5 sm:mr-2 md:mr-3 h-3.5 sm:h-4 md:h-5 w-3.5 sm:w-4 md:w-5" />
+                    <span className="hidden sm:inline">Agendar Consultoria Gratuita</span>
+                    <span className="sm:hidden">Consultoria Gratuita</span>
+                    <ArrowRight className="ml-1.5 sm:ml-2 md:ml-3 h-3.5 sm:h-4 md:h-5 w-3.5 sm:w-4 md:w-5" />
                   </Button>
                 </Link>
 
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-4 text-lg font-semibold bg-white/80 backdrop-blur-sm"
+                  className="w-full sm:w-auto border-2 border-gray-300 text-gray-700 hover:bg-gray-50 px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 text-sm sm:text-base md:text-lg font-semibold bg-white/80 backdrop-blur-sm"
                 >
-                  <Play className="mr-3 h-5 w-5" />
+                  <Play className="mr-1.5 sm:mr-2 md:mr-3 h-3.5 sm:h-4 md:h-5 w-3.5 sm:w-4 md:w-5" />
                   Ver Demonstração
                 </Button>
               </div>
 
               {/* Trust Indicators */}
-              <div className="flex items-center space-x-6 pt-4 text-sm text-gray-600">
+              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-1 sm:space-y-0 sm:space-x-4 md:space-x-6 pt-2 sm:pt-4 text-xs sm:text-sm text-gray-600">
                 <div className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                  <CheckCircle className="w-3 sm:w-3.5 md:w-4 h-3 sm:h-3.5 md:h-4 text-green-500 mr-1.5 sm:mr-2" />
                   Consultoria gratuita
                 </div>
                 <div className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                  <CheckCircle className="w-3 sm:w-3.5 md:w-4 h-3 sm:h-3.5 md:h-4 text-green-500 mr-1.5 sm:mr-2" />
                   Sem compromisso
                 </div>
                 <div className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                  <CheckCircle className="w-3 sm:w-3.5 md:w-4 h-3 sm:h-3.5 md:h-4 text-green-500 mr-1.5 sm:mr-2" />
                   Resposta em 24h
                 </div>
               </div>
             </div>
 
             {/* Right Visual Content */}
-            <div className="relative">
+            <div className="relative mt-6 sm:mt-8 lg:mt-0 order-2 lg:order-2">
               {/* Main Visual Card */}
-              <div className="relative bg-white rounded-3xl shadow-2xl p-8 border border-gray-100">
+              <div className="relative bg-white rounded-xl sm:rounded-2xl md:rounded-3xl shadow-2xl p-3 sm:p-4 md:p-8 border border-gray-100">
                 {/* SAP Dashboard Mockup */}
-                <div className="space-y-6">
+                <div className="space-y-3 sm:space-y-4 md:space-y-6">
                   {/* Header */}
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center">
-                        <Database className="w-5 h-5 text-white" />
+                    <div className="flex items-center space-x-2 sm:space-x-2.5 md:space-x-3">
+                      <div className="w-6 sm:w-8 md:w-10 h-6 sm:h-8 md:h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-md sm:rounded-lg flex items-center justify-center">
+                        <Database className="w-3 sm:w-4 md:w-5 h-3 sm:h-4 md:h-5 text-white" />
                       </div>
-                      <div>
-                        <div className="font-semibold text-gray-900">SAP S/4HANA</div>
-                        <div className="text-sm text-gray-500">Dashboard Executivo</div>
+                      <div className="min-w-0">
+                        <div className="font-semibold text-gray-900 text-xs sm:text-sm md:text-base">SAP S/4HANA</div>
+                        <div className="text-xs sm:text-sm text-gray-500">Dashboard Executivo</div>
                       </div>
                     </div>
-                    <Badge className="bg-green-100 text-green-700">Online</Badge>
+                    <Badge className="bg-green-100 text-green-700 text-xs">Online</Badge>
                   </div>
 
                   {/* Metrics Grid */}
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-2xl">
-                      <div className="flex items-center justify-between mb-2">
-                        <BarChart3 className="w-5 h-5 text-blue-600" />
+                  <div className="grid grid-cols-2 gap-1.5 sm:gap-2 md:gap-4">
+                    <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-2 sm:p-3 md:p-4 rounded-lg sm:rounded-xl md:rounded-2xl">
+                      <div className="flex items-center justify-between mb-1 sm:mb-1.5 md:mb-2">
+                        <BarChart3 className="w-3 sm:w-4 md:w-5 h-3 sm:h-4 md:h-5 text-blue-600" />
                         <span className="text-xs text-blue-600 font-medium">+15%</span>
                       </div>
-                      <div className="text-2xl font-bold text-blue-900">€2.4M</div>
-                      <div className="text-sm text-blue-700">Receita Mensal</div>
+                      <div className="text-sm sm:text-lg md:text-2xl font-bold text-blue-900">AOA 2.4M</div>
+                      <div className="text-xs sm:text-sm text-blue-700">Receita Mensal</div>
                     </div>
 
-                    <div className="bg-gradient-to-br from-green-50 to-green-100 p-4 rounded-2xl">
-                      <div className="flex items-center justify-between mb-2">
-                        <TrendingUp className="w-5 h-5 text-green-600" />
+                    <div className="bg-gradient-to-br from-green-50 to-green-100 p-2 sm:p-3 md:p-4 rounded-lg sm:rounded-xl md:rounded-2xl">
+                      <div className="flex items-center justify-between mb-1 sm:mb-1.5 md:mb-2">
+                        <TrendingUp className="w-3 sm:w-4 md:w-5 h-3 sm:h-4 md:h-5 text-green-600" />
                         <span className="text-xs text-green-600 font-medium">+8%</span>
                       </div>
-                      <div className="text-2xl font-bold text-green-900">94.2%</div>
-                      <div className="text-sm text-green-700">Eficiência</div>
+                      <div className="text-sm sm:text-lg md:text-2xl font-bold text-green-900">94.2%</div>
+                      <div className="text-xs sm:text-sm text-green-700">Eficiência</div>
                     </div>
 
-                    <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-4 rounded-2xl">
-                      <div className="flex items-center justify-between mb-2">
-                        <Users className="w-5 h-5 text-purple-600" />
+                    <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-2 sm:p-3 md:p-4 rounded-lg sm:rounded-xl md:rounded-2xl">
+                      <div className="flex items-center justify-between mb-1 sm:mb-1.5 md:mb-2">
+                        <Users className="w-3 sm:w-4 md:w-5 h-3 sm:h-4 md:h-5 text-purple-600" />
                         <span className="text-xs text-purple-600 font-medium">+12%</span>
                       </div>
-                      <div className="text-2xl font-bold text-purple-900">1,247</div>
-                      <div className="text-sm text-purple-700">Usuários Ativos</div>
+                      <div className="text-sm sm:text-lg md:text-2xl font-bold text-purple-900">1,247</div>
+                      <div className="text-xs sm:text-sm text-purple-700">Usuários Ativos</div>
                     </div>
 
-                    <div className="bg-gradient-to-br from-orange-50 to-orange-100 p-4 rounded-2xl">
-                      <div className="flex items-center justify-between mb-2">
-                        <Settings className="w-5 h-5 text-orange-600" />
+                    <div className="bg-gradient-to-br from-orange-50 to-orange-100 p-2 sm:p-3 md:p-4 rounded-lg sm:rounded-xl md:rounded-2xl">
+                      <div className="flex items-center justify-between mb-1 sm:mb-1.5 md:mb-2">
+                        <Settings className="w-3 sm:w-4 md:w-5 h-3 sm:h-4 md:h-5 text-orange-600" />
                         <span className="text-xs text-orange-600 font-medium">99.9%</span>
                       </div>
-                      <div className="text-2xl font-bold text-orange-900">24/7</div>
-                      <div className="text-sm text-orange-700">Uptime</div>
+                      <div className="text-sm sm:text-lg md:text-2xl font-bold text-orange-900">24/7</div>
+                      <div className="text-xs sm:text-sm text-orange-700">Uptime</div>
                     </div>
                   </div>
 
                   {/* Progress Bars */}
-                  <div className="space-y-4">
+                  <div className="space-y-2 sm:space-y-3 md:space-y-4">
                     <div>
-                      <div className="flex justify-between text-sm mb-2">
+                      <div className="flex justify-between text-xs sm:text-sm mb-1 sm:mb-1.5 md:mb-2">
                         <span className="text-gray-700">Implementação S/4HANA</span>
                         <span className="text-gray-500">85%</span>
                       </div>
-                      <div className="w-full bg-gray-200 rounded-full h-2">
+                      <div className="w-full bg-gray-200 rounded-full h-1 sm:h-1.5 md:h-2">
                         <div
-                          className="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full"
+                          className="bg-gradient-to-r from-blue-500 to-purple-500 h-1 sm:h-1.5 md:h-2 rounded-full"
                           style={{ width: "85%" }}
                         ></div>
                       </div>
                     </div>
 
                     <div>
-                      <div className="flex justify-between text-sm mb-2">
+                      <div className="flex justify-between text-xs sm:text-sm mb-1 sm:mb-1.5 md:mb-2">
                         <span className="text-gray-700">Treinamento Equipe</span>
                         <span className="text-gray-500">92%</span>
                       </div>
-                      <div className="w-full bg-gray-200 rounded-full h-2">
+                      <div className="w-full bg-gray-200 rounded-full h-1 sm:h-1.5 md:h-2">
                         <div
-                          className="bg-gradient-to-r from-green-500 to-blue-500 h-2 rounded-full"
+                          className="bg-gradient-to-r from-green-500 to-blue-500 h-1 sm:h-1.5 md:h-2 rounded-full"
                           style={{ width: "92%" }}
                         ></div>
                       </div>
                     </div>
 
                     <div>
-                      <div className="flex justify-between text-sm mb-2">
+                      <div className="flex justify-between text-xs sm:text-sm mb-1 sm:mb-1.5 md:mb-2">
                         <span className="text-gray-700">Migração de Dados</span>
                         <span className="text-gray-500">78%</span>
                       </div>
-                      <div className="w-full bg-gray-200 rounded-full h-2">
+                      <div className="w-full bg-gray-200 rounded-full h-1 sm:h-1.5 md:h-2">
                         <div
-                          className="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full"
+                          className="bg-gradient-to-r from-purple-500 to-pink-500 h-1 sm:h-1.5 md:h-2 rounded-full"
                           style={{ width: "78%" }}
                         ></div>
                       </div>
@@ -371,40 +372,29 @@ export default function HomePage() {
                   </div>
                 </div>
 
-                {/* Floating Action Buttons */}
-                <div className="absolute -right-4 -top-4">
-                  <div className="bg-gradient-to-r from-green-500 to-green-600 w-12 h-12 rounded-full flex items-center justify-center shadow-lg animate-pulse">
-                    <Zap className="w-6 h-6 text-white" />
+                {/* Floating Action Buttons - progressive enhancement */}
+                <div className="hidden sm:block absolute -right-2 sm:-right-4 -top-2 sm:-top-4">
+                  <div className="bg-gradient-to-r from-green-500 to-green-600 w-8 sm:w-10 md:w-12 h-8 sm:h-10 md:h-12 rounded-full flex items-center justify-center shadow-lg animate-pulse">
+                    <Zap className="w-4 sm:w-5 md:w-6 h-4 sm:h-5 md:h-6 text-white" />
                   </div>
                 </div>
 
-                <div className="absolute -left-4 -bottom-4">
-                  <div className="bg-gradient-to-r from-blue-500 to-blue-600 w-10 h-10 rounded-full flex items-center justify-center shadow-lg animate-bounce">
-                    <Building className="w-5 h-5 text-white" />
-                  </div>
-                </div>
-              </div>
-
-              {/* Floating Stats Cards */}
-              <div className="absolute -top-8 -left-8 bg-white rounded-2xl shadow-xl p-4 border border-gray-100">
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-lg flex items-center justify-center">
-                    <Award className="w-4 h-4 text-white" />
-                  </div>
-                  <div>
-                    <div className="text-lg font-bold text-gray-900">4.9/5</div>
-                    <div className="text-xs text-gray-500">Satisfação</div>
+                <div className="hidden sm:block absolute -left-2 sm:-left-4 -bottom-2 sm:-bottom-4">
+                  <div className="bg-gradient-to-r from-blue-500 to-blue-600 w-6 sm:w-8 md:w-10 h-6 sm:h-8 md:h-10 rounded-full flex items-center justify-center shadow-lg animate-bounce">
+                    <Building className="w-3 sm:w-4 md:w-5 h-3 sm:h-4 md:h-5 text-white" />
                   </div>
                 </div>
               </div>
 
-              <div className="absolute -bottom-8 -right-8 bg-white rounded-2xl shadow-xl p-4 border border-gray-100">
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-gradient-to-r from-green-400 to-green-500 rounded-lg flex items-center justify-center">
-                    <CheckCircle className="w-4 h-4 text-white" />
+              
+
+              <div className="absolute -bottom-2 sm:-bottom-4 md:-bottom-8 -right-2 sm:-right-4 md:-right-8 bg-white rounded-lg sm:rounded-xl md:rounded-2xl shadow-xl p-2 sm:p-3 md:p-4 border border-gray-100">
+                <div className="flex items-center space-x-1.5 sm:space-x-2 md:space-x-3">
+                  <div className="w-5 sm:w-6 md:w-8 h-5 sm:h-6 md:h-8 bg-gradient-to-r from-green-400 to-green-500 rounded-md sm:rounded-lg flex items-center justify-center">
+                    <CheckCircle className="w-2.5 sm:w-3 md:w-4 h-2.5 sm:h-3 md:h-4 text-white" />
                   </div>
-                  <div>
-                    <div className="text-lg font-bold text-gray-900">500+</div>
+                  <div className="min-w-0">
+                    <div className="text-xs sm:text-sm md:text-lg font-bold text-gray-900">10+</div>
                     <div className="text-xs text-gray-500">Projetos</div>
                   </div>
                 </div>
@@ -413,14 +403,14 @@ export default function HomePage() {
           </div>
 
           {/* Bottom Stats Bar */}
-          <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div className="mt-8 sm:mt-12 md:mt-20 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-8 text-center">
             {stats.map((stat, index) => {
               const IconComponent = stat.icon
               return (
                 <div key={index} className="group">
-                  <div className="flex items-center justify-center mb-3">
+                  <div className="flex items-center justify-center mb-1.5 sm:mb-2 md:mb-3">
                     <div
-                      className={`w-12 h-12 bg-gradient-to-r ${
+                      className={`w-8 sm:w-10 md:w-12 h-8 sm:h-10 md:h-12 bg-gradient-to-r ${
                         index === 0
                           ? "from-blue-500 to-blue-600"
                           : index === 1
@@ -428,17 +418,17 @@ export default function HomePage() {
                             : index === 2
                               ? "from-purple-500 to-purple-600"
                               : "from-orange-500 to-orange-600"
-                      } rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform`}
+                      } rounded-lg sm:rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform`}
                     >
-                      <IconComponent className="w-6 h-6 text-white" />
+                      <IconComponent className="w-4 sm:w-5 md:w-6 h-4 sm:h-5 md:h-6 text-white" />
                     </div>
                   </div>
                   <div
-                    className={`text-3xl md:text-4xl font-bold ${stat.color} mb-2 group-hover:scale-110 transition-transform`}
+                    className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold ${stat.color} mb-1 sm:mb-1.5 md:mb-2 group-hover:scale-110 transition-transform`}
                   >
                     {stat.number}
                   </div>
-                  <div className="text-gray-600 text-sm md:text-base">{stat.label}</div>
+                  <div className="text-gray-600 text-xs sm:text-sm md:text-base px-1 sm:px-2">{stat.label}</div>
                 </div>
               )
             })}
@@ -743,6 +733,7 @@ export default function HomePage() {
       </section>
 
       <Footer />
+
 
       <style jsx>{`
         @keyframes scroll {

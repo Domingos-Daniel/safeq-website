@@ -1,5 +1,0 @@
-User-Agent: *
-Allow: /
-Disallow: /admin/
-
-Sitemap: https://safeq-ao.ao/sitemap.xml
