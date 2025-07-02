@@ -249,7 +249,7 @@ export default function ServicosPage() {
       category: "Desenvolvimento",
     },
     {
-      icon: DocumentFragment,
+      icon: Server,
       name: "SAP BASIS",
       title: "BASIS Administration",
       description: "Administração de sistemas SAP",
